@@ -17,5 +17,5 @@ while(1):
 	dstPort = dstPort[:-1]
 	print 'source :',source,'srcPort',srcPort,'Dest',dest,'DestPort',dstPort
 	fw.write(source+','+srcPort+','+dest+','+dstPort+','+time+','+proto+'\n')
-
+	fw.flush()
 fw.close()
