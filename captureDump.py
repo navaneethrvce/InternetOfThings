@@ -3,7 +3,7 @@ import os
 fw = open('result.txt',"w")
 
 while(1):
-	result = os.popen("sudo tcpdump -n -i eth0 -c 1 | awk '{print $1,$2,$3,$5}' ").read()
+	result = os.popen("sudo tcpdump -nn -i wlp0s20u12 -c 1 | awk '{print $1,$2,$3,$5}' ").read()
 	token = result.split()
 	time,proto,source,dest = token[0],token[1],token[2],token[3]
 	index = source.rfind('.')
