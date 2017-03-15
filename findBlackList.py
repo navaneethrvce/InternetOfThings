@@ -3,7 +3,7 @@ import json
 from bs4 import BeautifulSoup
 from add_firewall_rule import add_rule
 
-fileInput =  open("result.txt", "r")
+
 
 blackListedIP = {}
 allowedIP = {}
@@ -11,6 +11,10 @@ allowedIP = {}
 
 
 file  = open("findBlackList.txt","a+")
+
+
+
+
 def isBlackList( s_Ip, d_IP):
 
 	print("INSIDE ")
@@ -49,41 +53,48 @@ def isBlackList( s_Ip, d_IP):
 		return False
 
 
+def getNextData(lineNum):
 
-
-for line in fileInput:
-	dataSplit = line.split(",")
-	print dataSplit
-	sourceIP = dataSplit[0]
-	destinationIP = dataSplit[2]
-	print  sourceIP + " " + destinationIP
-	if sourceIP in allowedIP:
-		if allowedIP.get(sourceIP) == destinationIP:
-			print ("Allowed")
-	elif sourceIP in blackListedIP:
-		if(blackListedIP.get(sourceIP == destinationIP)):
-			print "Refused"
-	else:
-		if isBlackList(sourceIP, destinationIP):
-			blackListedIP[sourceIP] = destinationIP
-			print "You are Blacklisted"
-			add_rule(sourceIP,destinationIP)
+	fileInput =  open("result.txt", "r")
+	count =0
+	for line in fileInput:
+		if count<lineNum:
+			count += 1
+			continue
+		dataSplit = line.split(",")
+		print dataSplit
+		sourceIP = dataSplit[0]
+		destinationIP = dataSplit[2]
+		print  sourceIP + " " + destinationIP
+		if sourceIP in allowedIP:
+			if allowedIP.get(sourceIP) == destinationIP:
+				print ("Allowed")
+		elif sourceIP in blackListedIP:
+			if(blackListedIP.get(sourceIP == destinationIP)):
+				print "Refused"
 		else:
-			allowedIP[sourceIP]= destinationIP
-			print "You are Allowed"
-		# fileInput.write(sourceIP] + "  " + dataSplit[1])
+			if isBlackList(sourceIP, destinationIP):
+				blackListedIP[sourceIP] = destinationIP
+				print "You are Blacklisted"
+				#add_rule(sourceIP,destinationIP)
+			else:
+				allowedIP[sourceIP]= destinationIP
+				print "You are Allowed"
+			# fileInput.write(sourceIP] + "  " + dataSplit[1])
 
 
-print ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+	print ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 
-count = 0;
+	count = 0;
 
-for iter in blackListedIP:
-	count += 1
-	print iter + " " + str(count)
+	for iter in blackListedIP:
+		count += 1
+		print iter + " " + str(count)
 
-print ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-count = 0;
-for iter in allowedIP:
-	count+=1
-	print iter + " " + str(count)
+	print ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+	count = 0;
+	for iter in allowedIP:
+		count+=1
+		print iter + " " + str(count)
+
+getNextData(0)
