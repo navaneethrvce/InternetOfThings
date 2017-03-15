@@ -1,0 +1,1 @@
+print "BLACKLISTED" in "'u BLACKLISTED '123 "
