@@ -1,0 +1,49 @@
+
+25	TCP	UDP	Simple Mail Transfer Protocol (SMTP),[11][25] used for email routing between mail servers
+
+
+434 Mobile IP Agent (RFC 5944)
+
+2948	TCP	UDP	WAP push Multimedia Messaging Service (MMS)
+
+2727	TCP	UDP	Media Gateway Control Protocol (MGCP) media gateway controller (call agent)
+
+387	TCP	UDP	AURP (AppleTalk Update-based Routing Protocol)[78]
+
+
+387	TCP	UDP	AURP (AppleTalk Update-based Routing Protocol)[78]
+
+691	TCP		MS Exchange Routing
+
+660	TCP		Mac OS X Server administration,[5] version 10.4 and earlier[11]
+
+119	TCP	UDP	Network News Transfer Protocol (NNTP),[11] retrieval of newsgroup messages[61][62]
+
+109	TCP	UDP	Post Office Protocol, version 2 (POP2)[54]
+
+104	TCP	UDP	Digital Imaging and Communications in Medicine (DICOM; also port 11112)
+
+20	TCP	UDP	File Transfer Protocol (FTP) data transfer[11][12]
+
+22	TCP SCTP[12] UDP	Secure Shell (SSH),[11] secure logins, file transfers (scp, sftp) and port forwarding
+
+18	TCP	UDP	Message Send Protocol[19][20]
+
+17	TCP	UDP	Quote of the Day (QOTD)[18]
+
+209	TCP	UDP	Quick Mail Transfer Protocol
+
+548	TCP		Apple Filing Protocol (AFP) over TCP[11]
+
+554	TCP	UDP	Real Time Streaming Protocol (RTSP)[11]
+
+563	TCP	UDP	NNTP over TLS/SSL (NNTPS)
+
+591	TCP		FileMaker 6.0 (and later) Web Sharing (HTTP Alternate, also see port 80)
+
+631	TCP	UDP	Internet Printing Protocol (IPP)[11]
+
+843	TCP		Adobe Flash[98]
+
+944		UDP	Network File System Service[citation needed]
+
