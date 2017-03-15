@@ -76,7 +76,7 @@ def getNextData(lineNum):
 			if isBlackList(sourceIP, destinationIP):
 				blackListedIP[sourceIP] = destinationIP
 				print "You are Blacklisted"
-				#add_rule(sourceIP,destinationIP)
+				add_rule(sourceIP,destinationIP)
 			else:
 				allowedIP[sourceIP]= destinationIP
 				print "You are Allowed"
