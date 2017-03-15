@@ -2,7 +2,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 from add_firewall_rule import add_rule
-
+import time
 
 
 blackListedIP = {}
@@ -98,3 +98,9 @@ def getNextData(lineNum):
 		print iter + " " + str(count)
 
 getNextData(0)
+counter = 0;
+while 1:
+	time.sleep(5)
+	counter += 50
+	getNextData(counter)
+	print ("IN WHILE &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
