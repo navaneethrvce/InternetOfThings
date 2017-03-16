@@ -108,10 +108,14 @@ def getNextData(lineNum):
             if iter not in fileBlackListedIP:
 
                 resAndCategory = getDevName(iter)
-
-                fileOutput.write(iter + " " + str(blackListedIP[iter]) + resAndCategory  +'\n')
-                fileBlackListedIP.append(iter + " " + str(blackListedIP[iter]) + resAndCategory)
-                fileOutput.flush()
+		if resAndCategory != None:
+                	fileOutput.write(iter + " " + str(blackListedIP[iter]) + str(resAndCategory)  +'\n')
+                	fileBlackListedIP.append(iter + " " + str(blackListedIP[iter]) + str(resAndCategory))
+                	fileOutput.flush()
+		else:
+			fileOutput.write(iter + " " + str(blackListedIP[iter]) + " None None" +'\n')
+                        fileBlackListedIP.append(iter + " " + str(blackListedIP[iter]) + " None None" + '\n')
+                        fileOutput.flush()
 
         print (" WHITE LIST $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
         count = 0;
