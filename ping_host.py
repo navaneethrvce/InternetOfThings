@@ -23,7 +23,7 @@ class PING_SWEEP(object):
         is_active = []
         is_active.append(hostadrr)
         alive_host = is_active.pop()
-        print("Host %s is \033[92m Active \033[0m" % alive_host)
+        print(alive_host)
         break
       elif line.find(hostadrr) and line.find(
           "Unreachable") > -1:  # No response from host
@@ -46,5 +46,4 @@ if __name__ == '__main__':
     PING_SWEEP().ping_sweeper()
   except KeyboardInterrupt:
     pass
-
 
