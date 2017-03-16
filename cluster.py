@@ -12,7 +12,7 @@ def categorize(dnss, dest_ip_count):
         dns[index]=x.lower()
 
     for i in dns:
-        print i
+        #print i
         if i in home_appliances:
             return 'home'
         elif i in entertainment:
@@ -32,4 +32,4 @@ def categorize(dnss, dest_ip_count):
         return 'general'
 
 
-print categorize(["samsung"], 100)
+

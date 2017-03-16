@@ -1,10 +1,16 @@
 import subprocess
 def netbios_resolver(ip_addr):
 	output = subprocess.check_output(['nbtscan',ip_addr])
-	#print output
-	if len(output.split('\n')) > 3:
-		return output.split('\n')[4].split()[1]
+	s = output.split()
+	if len(s) > 17:
+		if len(output.split('\n')) > 2:
+			ret_val = s[17] + " " + s[18]
+			print 'RET_VAL in netbios :' + ret_val
+			return ret_val
+		else:
+			return ""
 	else:
+		print "NBT Scan falied\n"
 		return ""
-print netbios_resolver('10.42.0.221')
+#print netbios_resolver('10.42.0.221')
 	

@@ -11,7 +11,7 @@ allowedIP = {}
 
 
 file  = open("findBlackList.txt","a+")
-
+fileOutput = open("BlackList.txt","a+")
 
 
 
@@ -56,6 +56,7 @@ def isBlackList( s_Ip, d_IP):
 def getNextData(lineNum):
 
 	fileInput =  open("result.txt", "r")
+	#fileOutput = open("BlackList.txt","a+")
 	count =0
 	for line in fileInput:
 		if count<lineNum:
@@ -90,6 +91,8 @@ def getNextData(lineNum):
 	for iter in blackListedIP:
 		count += 1
 		print iter + " " + str(count)
+		fileOutput.write(iter+'\n')
+		fileOutput.flush()
 
 	print ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 	count = 0;

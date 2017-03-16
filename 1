@@ -1,0 +1,16 @@
+from cluster import categorize
+from netbios import netbios_resolver
+
+deviceCategory = open("deviceCategory.txt","a+")
+
+getIPFromFile = open ("hosts.txt")
+
+for line in getIPFromFile:
+	res = netbios_resolver(line)
+	#print name
+	name = res.split()[1]
+	if name != "":
+		cat = categorize(name,0)
+		print cat
+		deviceCategory.write(line + ' ' + cat+'\n')
+		deviceCategory.flush()
